@@ -21,7 +21,7 @@ route.post('/addToCart',async(req,res)=>{
         const cartItems = await cartModel.find({userId});
         res.json({'message':"success",cartItems});
     } catch (error) {
-        res.json(400).json({"message" : "internal server error"})
+        res.status(400).json({"message" : "internal server error"})
     }
 })
 
@@ -31,7 +31,7 @@ route.post('/getCartData',async(req,res)=>{
         const cartItems = await cartModel.find({userId});
         res.json({'message':"success",cartItems});
     } catch (error) {
-        res.json(400).json({"message" : "internal server error"})
+        res.status(400).json({"message" : "internal server error"})
     }
 })
 
@@ -42,7 +42,7 @@ route.post('/removeItemFromCart',async(req,res)=>{
         const cartItems = await cartModel.find({userId})
         res.json({'message':"success",cartItems});
     } catch (error) {
-        res.json(400).json({"message" : "internal server error"})
+        res.status(400).json({"message" : "internal server error"})
     }
 })
 
